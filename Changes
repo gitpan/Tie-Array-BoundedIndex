@@ -1,0 +1,7 @@
+Revision history for Perl module Tie::Array::BoundedIndex
+
+0.01 Fri Oct 10 21:07:38 2003
+	- original version; created by ExtUtils::ModuleMaker 0.32
+
+0.02 Tue Dec 16 10:12:32 2003
+	- Name changed from Tie::Array::Bounded, incorporated feedback
