@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 24;
+use Test::More tests => 26;
 use Test::Exception;
 use Tie::Array::BoundedIndex;
 
@@ -67,3 +67,9 @@ throws_ok { splice(@array, 3, 1, 3..7) } $RANGE_EXCEP,
 is(0, scalar(@array), "Array emptied");
 
 is(undef, shift(@array), "Shift on empty array correct");
+
+tie @array, "Tie::Array::BoundedIndex", upper => 0;
+
+lives_ok { $array[0] = 42 } "Zero bound array store okay";
+
+throws_ok { $array[1] = 17 } $RANGE_EXCEP, "Zero bounds array exception";

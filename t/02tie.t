@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 7;
 use Test::Exception;
 use Tie::Array::BoundedIndex;
 
@@ -24,3 +24,6 @@ throws_ok { tie my @array, "Tie::Array::BoundedIndex", frogs => 10 }
 throws_ok { tie my @array, "Tie::Array::BoundedIndex",
             lower => 2, upper => 1 }
           qr/Upper bound < lower/, "Wrong bound order fails";
+
+lives_ok {tie my @array, "Tie::Array::BoundedIndex", upper => 0 }
+           "Upper limit can be 0";

@@ -5,7 +5,7 @@ use Carp;
 
 use Tie::Array;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 BEGIN
 {
@@ -26,7 +26,7 @@ sub TIEARRAY
   my ($class, %arg) = @_;
   my ($upper, $lower) = delete @arg{qw(upper lower)};
   croak "Illegal arguments in tie" if %arg;
-  croak "No upper bound for array" unless $upper;
+  croak "No upper bound for array" unless defined $upper;
 
   $lower ||= 0;
 

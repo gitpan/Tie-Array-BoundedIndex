@@ -1,14 +1,12 @@
---- #YAML:1.0
+---
 name: Tie-Array-BoundedIndex
-version: 0.02
+version: 0.03
+author:
+  - Peter Scott, C<pjs-cpan@PSDT.com>.
+abstract: Bounded arrays
 license: perl
-distribution_type: module
-requires: {}
-recommends: {}
-build_requires: {}
-conflicts: {}
 provides:
   Tie::Array::BoundedIndex:
     file: lib/Tie/Array/BoundedIndex.pm
-    version: 0.02
-generated_by: Module::Build version 0.21
+    version: 0.03
+generated_by: Module::Build version 0.261
