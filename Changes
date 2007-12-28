@@ -8,3 +8,6 @@ Revision history for Perl module Tie::Array::BoundedIndex
 
 0.03 Tue Jun 21 17:16:50 2005
 	- Fixed bug in arrays of length 1.
+
+0.04 Fri Dec 28 08:05:17 2007
+	- Tests no longer fail without Test::Exception

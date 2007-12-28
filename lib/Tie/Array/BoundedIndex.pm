@@ -5,7 +5,7 @@ use Carp;
 
 use Tie::Array;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 BEGIN
 {
@@ -198,7 +198,7 @@ bounded arrays, submit an XS version (with tests) and I'll add it.
 
 =head1 AUTHOR
 
-Peter Scott, C<pjs-cpan@PSDT.com>.
+Peter Scott, C<cpan@PSDT.com>.
 
 This module is an expanded version of an example developed
 in the book ``Perl Medic: Transforming Legacy Code''.  See

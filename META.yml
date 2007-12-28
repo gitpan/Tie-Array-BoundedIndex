@@ -1,12 +1,17 @@
 ---
 name: Tie-Array-BoundedIndex
-version: 0.03
+version: 0.04
 author:
-  - Peter Scott, C<pjs-cpan@PSDT.com>.
+  - 'Peter Scott, C<cpan@PSDT.com>.'
 abstract: Bounded arrays
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 provides:
   Tie::Array::BoundedIndex:
     file: lib/Tie/Array/BoundedIndex.pm
-    version: 0.03
-generated_by: Module::Build version 0.261
+    version: 0.04
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

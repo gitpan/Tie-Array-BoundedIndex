@@ -3,13 +3,12 @@
 use strict;
 use warnings;
 use Test::More tests => 2;
-use Test::Exception;
 use Tie::Array::BoundedIndex;
 
 SKIP:
 {
-  skip "Attribute::Handlers not installed", 2
-    unless eval "require Attribute::Handlers";
+  eval "require $_ and $_->import" or skip "$_ not installed", 2
+    for qw(Attribute::Handlers Test::Exception);
 
   dies_ok { my @x : Bounded(foo => 42) } "Illegal arguments exception";
 
