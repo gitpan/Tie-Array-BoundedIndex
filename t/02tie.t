@@ -5,8 +5,14 @@ use warnings;
 use Test::More tests => 7;
 use Tie::Array::BoundedIndex;
 
+my $t_e_installed;
+BEGIN {
+  eval "require Test::Exception"
+    and $t_e_installed = 1, Test::Exception->import;
+}
+
 SKIP: {
-  eval "use Test::Exception" or skip "Test::Exception not installed", 6;
+  $t_e_installed or skip "Test::Exception not installed", 6;
 
   dies_ok { tie my @array, "Tie::Array::Bounded::Index" }
             "Croak with no bound specified";

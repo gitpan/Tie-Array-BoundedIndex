@@ -5,13 +5,15 @@ use Carp;
 
 use Tie::Array;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 BEGIN
 {
+  $DB::single = 1;
   eval "require Attribute::Handlers";
   return if $@;
-  Attribute::Handlers->import(autotie => { Bounded => __PACKAGE__ });
+  Attribute::Handlers->import(autotie => { '__CALLER__::Bounded'
+					   => __PACKAGE__ });
 }
 
 # The underlying object contains the bounds and also an

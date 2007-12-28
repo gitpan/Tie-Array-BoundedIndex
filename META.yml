@@ -1,6 +1,6 @@
 ---
 name: Tie-Array-BoundedIndex
-version: 0.04
+version: 0.05
 author:
   - 'Peter Scott, C<cpan@PSDT.com>.'
 abstract: Bounded arrays
@@ -10,7 +10,7 @@ resources:
 provides:
   Tie::Array::BoundedIndex:
     file: lib/Tie/Array/BoundedIndex.pm
-    version: 0.04
+    version: 0.05
 generated_by: Module::Build version 0.2805
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

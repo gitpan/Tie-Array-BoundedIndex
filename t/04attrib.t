@@ -5,11 +5,18 @@ use warnings;
 use Test::More tests => 2;
 use Tie::Array::BoundedIndex;
 
+my $mod_not_available;
+
+BEGIN {
+#  eval 'require Attribute::Handlers'
+#   or $mod_not_available = 'Attribute::Handlers';
+  defined eval "require $_ and $_->import" or $mod_not_available = $_
+    for 'Test::Exception';
+}
+
 SKIP:
 {
-  eval "require $_ and $_->import" or skip "$_ not installed", 2
-    for qw(Attribute::Handlers Test::Exception);
-
+  $mod_not_available and skip "$mod_not_available not installed", 2;
   dies_ok { my @x : Bounded(foo => 42) } "Illegal arguments exception";
 
   my @x : Bounded(upper => 5);
