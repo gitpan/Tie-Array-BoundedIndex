@@ -5,7 +5,7 @@ use Carp;
 
 use Tie::Array;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 BEGIN
 {

@@ -8,15 +8,15 @@ use Tie::Array::BoundedIndex;
 my $mod_not_available;
 
 BEGIN {
-#  eval 'require Attribute::Handlers'
-#   or $mod_not_available = 'Attribute::Handlers';
+  eval 'require Attribute::Handlers'
+   or $mod_not_available = 'Attribute::Handlers';
   defined eval "require $_ and $_->import" or $mod_not_available = $_
     for 'Test::Exception';
 }
 
-SKIP:
-{
+SKIP: {
   $mod_not_available and skip "$mod_not_available not installed", 2;
+
   dies_ok { my @x : Bounded(foo => 42) } "Illegal arguments exception";
 
   my @x : Bounded(upper => 5);

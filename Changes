@@ -14,3 +14,6 @@ Revision history for Perl module Tie::Array::BoundedIndex
 
 0.05 Fri Dec 28 11:19:21 2007
 	- Fix bug with newer Attribute::Handlers
+
+0.06 Sat Dec 29 18:33:53 2007
+	- Gave up on getting attributes to work in 5.6.
